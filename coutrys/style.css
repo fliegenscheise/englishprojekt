@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column; /* Default layout: stack vertically */
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* Styling for the sections */
+  #neo,
+  #history {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  
+  /* Media query for wide screens */
+  @media (min-width: 768px) {
+    .container {
+      flex-direction: row; /* Place elements side by side */
+      align-items: flex-start;
+    }
+  
+    #neo,
+    #history {
+      flex: 1; /* Equal width for both sections */
+      max-width: 48%; /* Optional: Limit the width of each section */
+    }
+  }
+  
