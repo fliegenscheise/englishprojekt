@@ -48,50 +48,54 @@
 
     <!-- Map areas -->
     <map name="africa-map">
-      <area shape="poly" coords="332,406,492,380,485,445,475,546,423,501,330,474" href="./coutrys/DRCongo.html" alt="Congo"
-        data-tooltip="DR Congo: Population 111M">
+      <area shape="poly" coords="332,406,492,380,485,445,475,546,423,501,330,474" href="./coutrys/DRCongo.html"
+        alt="Congo" data-tooltip="DR Congo: Population 111M">
       <area shape="poly" coords="599,463,553,432,551,380,620,383,620,439" href="./coutrys/Kenya.html" alt="Kenya"
         data-tooltip="Kenya: Population 57M">
       <area shape="poly"
         coords="524,690,514,657,538,606,510,583,544,577,552,601,570,584,554,550,610,538,609,586,552,621,550,669"
         href="./coutrys/Mozambique.html" alt="Mozambique" data-tooltip="Mozambique: Population 35M">
-      <area shape="poly" coords="542,338,571,371,626,373,657,362,678,334,626,304,590,274,563,286" href="./coutrys/Ethiopia.html"
-        alt="Ethiopia" data-tooltip="Ethiopia: Population 134M">
+      <area shape="poly" coords="542,338,571,371,626,373,657,362,678,334,626,304,590,274,563,286"
+        href="./coutrys/Ethiopia.html" alt="Ethiopia" data-tooltip="Ethiopia: Population 134M">
       <area shape="poly"
         coords="324,488,358,489,370,508,389,505,417,503,420,538,438,536,437,546,424,553,418,588,428,602,316,603"
         href="./coutrys/Angola.html" alt="Angola" data-tooltip="Angola: Population 38M">
       <area shape="poly" coords="160,363,163,305,192,305,194,362" href="./coutrys/Ghana.html" alt="Ghana"
         data-tooltip="Ghana: Population 34M">
-      <area shape="poly" coords="561,371,518,384,444,331,424,287,441,261,451,200,528,200,551,181,581,230,569,248,541,336" href="./coutrys/Sudan.html" alt="Sudan"
-        data-tooltip="Sudan: Population 51M">
+      <area shape="poly"
+        coords="561,371,518,384,444,331,424,287,441,261,451,200,528,200,551,181,581,230,569,248,541,336"
+        href="./coutrys/Sudan.html" alt="Sudan" data-tooltip="Sudan: Population 51M">
     </map>
+    <br>
+    <a href="./sources.html">sources</a>
   </div>
 
   <script>
     const tooltip = document.getElementById('tooltip');
-const areas = document.querySelectorAll('area');
+    const areas = document.querySelectorAll('area');
 
-areas.forEach(area => {
-  area.addEventListener('mousemove', (e) => {
-    tooltip.textContent = area.dataset.tooltip;
+    areas.forEach(area => {
+      area.addEventListener('mousemove', (e) => {
+        tooltip.textContent = area.dataset.tooltip;
 
-    // Get the container's bounding box
-    const container = document.querySelector('.map-container').getBoundingClientRect();
+        // Get the container's bounding box
+        const container = document.querySelector('.map-container').getBoundingClientRect();
 
-    // Calculate the tooltip's position relative to the container
-    const x = e.clientX - container.left + 10; // Offset for better visibility
-    const y = e.clientY - container.top + 10;
+        // Calculate the tooltip's position relative to the container
+        const x = e.clientX - container.left + 10; // Offset for better visibility
+        const y = e.clientY - container.top + 10;
 
-    tooltip.style.left = `${x}px`;
-    tooltip.style.top = `${y}px`;
-    tooltip.classList.add('visible');
-  });
+        tooltip.style.left = `${x}px`;
+        tooltip.style.top = `${y}px`;
+        tooltip.classList.add('visible');
+      });
 
-  area.addEventListener('mouseleave', () => {
-    tooltip.classList.remove('visible');
-  });
-});
+      area.addEventListener('mouseleave', () => {
+        tooltip.classList.remove('visible');
+      });
+    });
   </script>
+  
 </body>
 
 </html>
